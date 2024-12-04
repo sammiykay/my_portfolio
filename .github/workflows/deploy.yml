@@ -17,26 +17,27 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: '3.12'
+          architecture: x64
+          token: ${{secrets.GITHUB_TOKEN}}
+          cache-dependenciy-path: ./path/to/dependencies
 
       - name: Install Dependencies
         run: |
-          python -m venv myvenv
-          source myvenv/bin/activate
-          pip install -r requirements.txt
+        
+            python3 -m pip install --upgrade pip
+            pip install -r requirements.txt
 
       - name: Deploy to Server
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.SERVER_IP }} "
-          cd /path/to/project &&
-          git pull &&
-          source venv/bin/activate &&
-          pip install -r requirements.txt &&
-          python manage.py migrate &&
-          python manage.py collectstatic --noinput &&
-          sudo systemctl restart gunicorn
-          "
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          DEBUG: ${{ secrets.DEBUG }}
+        uses: appleboy/ssh-action@master
+        with:
+            host: ${{secrets.EC2_HOST}}
+            username: ${{secrets.EC2_USERNAME}}
+            key: ${{secrets.EC2_PRIVATE_KEY}}
 
-          
+        script: |
+            cd /home/ubuntu/my_portfolio
+            git pull
+            sudo pip install -r requirements.txt
+            sudo systemctl daemon-reload
+            sudo systemctl restart gunicorn
+
