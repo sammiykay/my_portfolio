@@ -23,21 +23,26 @@ jobs:
 
       - name: Install Dependencies
         run: |
-        
-            python3 -m pip install --upgrade pip
-            pip install -r requirements.txt
+          python3 -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
 
       - name: Deploy to Server
         uses: appleboy/ssh-action@master
         with:
-            host: ${{secrets.EC2_HOST}}
-            username: ${{secrets.EC2_USERNAME}}
-            key: ${{secrets.EC2_PRIVATE_KEY}}
-            script: |
-                cd /home/ubuntu/my_portfolio
-                git pull
-                sudo source myvenv/bin.activate
-                sudo pip install -r requirements.txt
-                sudo systemctl daemon-reload
-                sudo systemctl restart gunicorn
-
+          host: ${{secrets.EC2_HOST}}
+          username: ${{secrets.EC2_USERNAME}}
+          key: ${{secrets.EC2_PRIVATE_KEY}}
+          script: |
+            cd /home/ubuntu/my_portfolio
+            git pull
+            source myvenv/bin/activate
+            pip install -r requirements.txt
+            sudo systemctl daemon-reload
+            sudo systemctl restart gunicorn
