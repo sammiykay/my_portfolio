@@ -23,3 +23,4 @@ def send_thank_you_email(name, email, message):
         return True
     except Exception as e:
         return str(e)
+    
