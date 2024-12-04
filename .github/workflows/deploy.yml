@@ -19,7 +19,7 @@ jobs:
           python-version: '3.12'
           architecture: x64
           token: ${{secrets.GITHUB_TOKEN}}
-          cache-dependenciy-path: ./path/to/dependencies
+          # cache-dependenciy-path: ./path/to/dependencies
 
       - name: Install Dependencies
         run: |
