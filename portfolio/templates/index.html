@@ -1,0 +1,378 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{% static 'image/logo.ico' %}" type="'image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sammiykay</title>
+</head>
+
+<body>
+    <nav id="navbar" class="bg-black absolute w-full text-white py-8 text-sm font-semibold" style="z-index: 10000;">
+        <div class="md:flex items-center text-center w-4/6 mx-auto justify-between">
+            <div></div>
+            <div class="float-right block md:hidden cursor-pointer">
+                <svg id="menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                </svg>
+            </div>
+            <div id="links"
+                class="py-20 md:py-0 flex-col hidden md:flex md:flex-row flex justify-between md:w-2/3 lg:3/5 xl:w-2/5">
+                <a href="" class="hover:text-yellow-400 transition.5 transition">HOME</a>
+                <a href="" class="mt-6 md:mt-0 hover:text-yellow-400 transition.5 transition">ABOUT ME</a>
+                <a href="" class="mt-6 md:mt-0 hover:text-yellow-400 transition.5 transition">SERVICE</a>
+                <a href="" class="mt-6 md:mt-0 hover:text-yellow-400 transition.5 transition">PORTFOLIO</a>
+                <a href="" class="mt-6 md:mt-0 hover:text-yellow-400 transition.5 transition">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="h-screen bg-cover bg-center" style="background: url('{% static 'image/1.jpg' %}') center 0px / cover no-repeat fixed;">
+        <div class="overlay bg-gray-900 h-screen " style="opacity: 0.6;">
+
+            <div class="text-white text-center"
+                style="width: 90%;z-index: 10000; position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                <span class="" id="typed3"
+                    style="font-size: 70px; font-weight: bold; font-family: Arial, Helvetica, sans-serif; ">I am
+                    Samson</span>
+                <div class="social-holder pos outline mt-5">
+                    <a href="https://facebook.com/sammiykay" target="_blank"><i class="fa fa-facebook"
+                            aria-hidden="true"></i></a>
+                    <a href="https://x.com/sammiykay" target="_blank"><i class="fa fa-twitter"
+                            aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/oke-samson/" target="_blank"><i class="fa fa-linkedin"
+                            aria-hidden="true"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center " style="z-index: 1000;">
+        <div class="" style="padding: 140px 0px;">
+            <p class="text-7xl font-bold text-gray-700">Hello!</p>
+            <p class="text-center mx-auto" style="width: 500px; font-size: 20px;">I am an expert web developer with half
+                a decade experince passionate to develop outstanding design and functionality.</p>
+            <button
+                class="text-yellow-400 border border-yellow-400 px-10 py-4 font-bold border-2 mt-4 rounded-sm hover:bg-yellow-400 hover:text-white transition.5 transition mt-8">Hire
+                Me</button>
+        </div>
+    </div>
+    <div class="bg-gray-100" style="padding: 120px 0px;">
+        <p class="text-6xl font-bold text-gray-700 text-center mb-10">My Service</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 w-4/5 mx-auto">
+            <div class="bg-white p-10 text-center hover:mt-4 hover:shadow-xl transition.5 transition">
+                <div class="service-icon" style="text-align: center;">
+                    <i class="fa fa-laptop"></i>
+                </div>
+                <div>
+                    <p class="" style="font-weight: 500;">Web Design</p>
+                    <p>Creating visually stunning and user-friendly web designs that captivate and engage users.
+                    </p>
+                </div>
+            </div>
+            <div class="bg-white p-10 text-center hover:shadow-xl transition.5 transition ">
+                <div class="service-icon" style="text-align: center;">
+                    <i class="fa fa-codepen"></i>
+                </div>
+                <div>
+                    <p class="" style="font-weight: 500;">Web Development</p>
+                    <p>Crafting robust web solutions for exceptional user experiences.</p>
+                </div>
+            </div>
+            <div class="bg-white p-10 text-center hover:shadow-xl transition.5 transition ">
+                <div class="service-icon" style="text-align: center;">
+                    <i class="fa fa-cogs"></i>
+                </div>
+                <div>
+                    <p class="" style="font-weight: 500;">Web Automation</p>
+                    <p>Streamlining processes with advanced web automation solutions.</p>
+                </div>
+            </div>
+            <div class="bg-white p-10 text-center hover:shadow-xl transition.5 transition ">
+                <div class="service-icon" style="text-align: center;">
+                    <i class="fa fa-code"></i>
+                </div>
+                <div>
+                    <p class="" style="font-weight: 500;">Automated Trading Script Developer</h4>
+                    <p>Developing sophisticated scripts for automated trading.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="experience" class="experience py-12">
+        <div class="container w-4/5 mx-auto" style="padding: 90px 0px;">
+            <div class="row">
+                <div class="text-center col-span-12 mb-8">
+                    <h1 class="text-4xl font-bold">Resume</h1>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-7 gap-8">
+                    <!-- Timeline -->
+                    <div class="col-span-1 md:col-span-5">
+                        <h2 class="text-2xl font-semibold mb-4">Work History</h2>
+                        <div class="mb-6"></div>
+                        <!-- Timeline Row -->
+                        <div class="timeline-row grid grid-cols-1 md:grid-cols-12 mb-6">
+                            <div class="col-span-3 mb-4 md:mb-0">
+                                <h3 class="text-lg font-semibold">Novaji</h3>
+                                <p>2023</p>
+                            </div>
+                            <div class="col-span-9 md:col-start-5">
+                                <h3 class="text-lg font-semibold">Backend Developer</h3>
+                                <p>Enhanced key web application features through proficient Python coding, API
+                                    integration, and efficient database management.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-row grid grid-cols-1 md:grid-cols-12 mb-6">
+                            <div class="col-span-3 mb-4 md:mb-0">
+                                <h3 class="text-lg font-semibold">ExecutiveHaven</h3>
+                                <p>2023-Present</p>
+                            </div>
+                            <div class="col-span-9 md:col-start-5">
+                                <h3 class="text-lg font-semibold">Full Stack Web Developer</h3>
+                                <p>Developed and maintained the website using React and Django, demonstrating full stack
+                                    expertise.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-row grid grid-cols-1 md:grid-cols-12">
+                            <div class="col-span-3 mb-4 md:mb-0">
+                                <h3 class="text-lg font-semibold">Bezal</h3>
+                                <p>2023-Present</p>
+                            </div>
+                            <div class="col-span-9 md:col-start-5">
+                                <h3 class="text-lg font-semibold">Full Stack Web Developer</h3>
+                                <p>Worked on creating a seamless landing page and an e-learning system.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill List -->
+                    <ul class="col-span-1 md:col-span-2">
+                        <li>
+                            <h2 class="text-2xl font-semibold mb-4">Skill</h2>
+                        </li>
+                        <li class="progress-element mb-4">
+                            <div class="flex justify-between">
+                                <div class="font-medium mt-3">HTML</div>
+                                <span class="percent">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded">
+                                <div class="h-1 bg-yellow-400 rounded" style="width: 95%;"></div>
+                            </div>
+                        </li>
+                        <li class="progress-element mb-4">
+                            <div class="flex justify-between">
+                                <div class="font-medium mt-3">CSS</div>
+                                <span class="percent">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded">
+                                <div class="h-1 bg-yellow-400 rounded" style="width: 85%;"></div>
+                            </div>
+                        </li>
+                        <li class="progress-element mb-4">
+                            <div class="flex justify-between">
+                                <div class="font-medium mt-3">JS</div>
+                                <span class="percent">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded">
+                                <div class="h-1 bg-yellow-400 rounded" style="width: 75%;"></div>
+                            </div>
+                        </li>
+                        <li class="progress-element mb-4">
+                            <div class="flex justify-between">
+                                <div class="font-medium mt-3">Python</div>
+                                <span class="percent">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded">
+                                <div class="h-1 bg-yellow-400 rounded" style="width: 80%;"></div>
+                            </div>
+                        </li>
+                        <li class="progress-element">
+                            <div class="flex justify-between">
+                                <div class="font-medium mt-3">Django</div>
+                                <span class="percent">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded">
+                                <div class="h-1 bg-yellow-400 rounded" style="width: 75%;"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="parallaxie bg-cover bg-center" style="background-image: url('{% static 'image/bg-parallax.jpg' %}');">
+        <div class="overly text-center py-40">
+          <div class="container mx-auto">
+            <div class="row flex flex-wrap justify-center">
+              <div class="static-wrapper grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="counter-wrapper text-center">
+                  <div class="top-row justify-center mb-4">
+                    <i class="fa fa-hand-peace-o text-6xl mb-6 text-yellow-400" aria-hidden="true"></i>
+                    <p class="counter text-4xl font-bold text-white ml-2">15</p>
+                  </div>
+                  <p class="text-xl spacing-9 text-white font-semibold">Projects completed</p>
+                </div>
+                <div class="counter-wrapper text-center">
+                  <div class="top-row justify-center mb-4">
+                    <i class="fa fa-diamond text-6xl mb-6 text-yellow-400" aria-hidden="true"></i>
+                    <p class="counter text-4xl font-bold text-white ml-2">5</p>
+                  </div>
+                  <p class="text-xl spacing-9 text-white font-semibold">Satisfied clients</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    <section id="portfolio" class="portfolio py-40">
+        <div class="container mx-auto">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold">My Portfolio</h1>
+            </div>
+            <div class="text-center mb-6">
+                <ul class="flex justify-center space-x-4">
+
+                    <!-- Add more filters as needed -->
+                </ul>
+            </div>
+            <div class="w-4/5 mx-auto">
+                <ul class="portfolio-wrapper grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- Portfolio Item 1 -->
+                    <li class="portfolio-item mix category-1 category-3" data-my-order="3">
+                        <a href="{% static 'image/bezal.png' %}" class="block relative group">
+                            <div class="portfolio-hover relative overflow-hidden">
+                                <img src="{% static 'image/bezal.PNG' %}" alt=""
+                                    class="w-full h-full object-cover group-hover:opacity-75 transition duration-300">
+                                <div
+                                    class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                    <div class="text-center text-white">
+                                        <h4 class="text-xl font-semibold">BezalGlobal</h4>
+                                        <p>Web Application</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Portfolio Item 2 -->
+                    <li class="portfolio-item mix category-1 category-3" data-my-order="4">
+                        <a href="{% static 'image/executivehaven.PNG' %}" class="block relative group">
+                            <div class="portfolio-hover relative overflow-hidden">
+                                <img src="{% static 'image/executivehaven.PNG' %}" alt=""
+                                    class="w-full h-full object-cover group-hover:opacity-75 transition duration-300">
+                                <div
+                                    class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                    <div class="text-center text-white">
+                                        <h4 class="text-xl font-semibold">ExecutiveHaven</h4>
+                                        <p>Web Application</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Add more portfolio items as needed -->
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact py-20 bg-gray-100">
+        <div class="container w-4/5 mx-auto">
+          <div class="text-center mb-8">
+            <!-- <h1 class="text-4xl font-bold">Get in touch</h1> -->
+          </div>
+          <div class="contact-holder">
+            <div class="mx-auto w-full lg:w-10/12">
+              <ul class="contact-details flex justify-between  mb-6">
+                <li class="">
+                  <i class="fa fa-map-marker text-2xl text-yellow-400" aria-hidden="true"></i>
+                  <p class="text-lg">+234 9071502233</p>
+                </li>
+                <li class="">
+                    <i class="fa fa-phone text-2xl text-yellow-400" aria-hidden="true"></i>
+                    <p class="text-lg">5 Akindele Lane, Fardock Estate, Iju Ishaga, Lagos, Nigeria</p>
+                  </li>
+               
+                <li class="">
+                  <i class="fa fa-envelope text-2xl text-yellow-400" aria-hidden="true"></i>
+                  <p class="text-lg">kayodeola47@gmail.com</p>
+                </li>
+              </ul>
+              <form id="contact-form" class="custom-form" method="post" action="contact.php" role="form">
+                <div class="messages mb-4"></div>
+                <div class="controls">
+                  <div class="form-group mb-4">
+                    <input id="form_name" type="text" name="name" class="form-control w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="Please enter your name *" required="required" data-error="Name is required.">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="form-group mb-4">
+                    <input id="form_email" type="email" name="email" class="form-control w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="form-group mb-4">
+                    <textarea id="form_message" name="message" class="form-control w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="Message for me *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                
+                  <input type="submit" class="text-yellow-400 border border-yellow-400 px-10 py-4 font-bold border-2 mt-4 rounded-sm hover:bg-yellow-400 hover:text-white transition.5 transition mt-8 bg-white" value="Send">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+</body>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script>
+    $('#menu').click(function () {
+        if ($('#links').hasClass('hidden')) {
+            $('#links')
+                .removeClass('hidden')
+                .addClass('animated fadeInDown'); // Add animation class
+        } else {
+            $('#links')
+                .addClass('animated fadeOutUp') // Add exit animation class
+                .one('animationend', function () {
+                    $(this).removeClass('animated fadeOutUp').addClass('hidden');
+                });
+        }
+    });
+    $(window).scroll(function () {
+        var currentScroll = $(this).scrollTop();
+        console.log(currentScroll);
+        console.log(currentScroll + " and " + previousScroll + " and " + headerOrgOffset);
+        if (currentScroll > headerOrgOffset) {
+            if (currentScroll > previousScroll) {
+                $('#navbar').animate({
+                    top: '-60px'      //Change to Height of navbar
+                }, 250);               //Mess with animate time
+            } else {
+                $('#navbar').animate({
+                    top: '0px'
+                }, 250);
+                $('#navbar').addClass('fixed');
+            }
+        } else {
+            $('#navbar').removeClass('fixed');
+        }
+        previousScroll = currentScroll;
+    });
+    console.log(window.screenY)
+
+</script>
+
+</html>
