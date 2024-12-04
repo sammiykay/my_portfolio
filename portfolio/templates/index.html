@@ -38,7 +38,8 @@
     </nav>
 
 
-    <div class="h-screen bg-cover bg-center" style="background: url('{% static 'image/1.jpg' %}') center 0px / cover no-repeat fixed;">
+    <div class="h-screen bg-cover bg-center"
+        style="background: url('{% static 'image/1.jpg' %}') center 0px / cover no-repeat fixed;">
         <div class="overlay bg-gray-900 h-screen " style="opacity: 0.6;">
 
             <div class="text-white text-center"
@@ -214,30 +215,31 @@
             </div>
         </div>
     </section>
-    <section class="relative bg-cover bg-center bg-fixed" style="background-image: url('{% static 'image/bg-parallax.jpg' %}');">
-		<div class="bg-black bg-opacity-50 text-white text-center py-40">
-			<div class="container mx-auto">
-				<div class="block sm:flex w-4/6 m-auto justify-around">
-					<div class="counter-wrapper">
-						<div class="flex flex-col items-center">
-							<i class="fa fa-hand-peace-o text-4xl mb-4"></i>
-							<p class="text-4xl font-bold counter">15</p>
-							<p class="mt-2">Projects completed</p>
-						</div>
-					</div>
-					<div class="counter-wrapper ">
-						<div class="flex flex-col md:mt-0 items-center">
-							<i class="fa fa-diamond text-4xl mt-20 md:mt-0 mb-4"></i>
-							<p class="text-4xl font-bold counter">5</p>
-							<p class="mt-2">Satisfied clients</p>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-	</section>
-      
+    <section class="relative bg-cover bg-center bg-fixed"
+        style="background-image: url('{% static 'image/bg-parallax.jpg' %}');">
+        <div class="bg-black bg-opacity-50 text-white text-center py-40">
+            <div class="container mx-auto">
+                <div class="block sm:flex w-4/6 m-auto justify-around">
+                    <div class="counter-wrapper">
+                        <div class="flex flex-col items-center">
+                            <i class="fa fa-hand-peace-o text-4xl mb-4"></i>
+                            <p class="text-4xl font-bold counter">15</p>
+                            <p class="mt-2">Projects completed</p>
+                        </div>
+                    </div>
+                    <div class="counter-wrapper ">
+                        <div class="flex flex-col md:mt-0 items-center">
+                            <i class="fa fa-diamond text-4xl mt-20 md:mt-0 mb-4"></i>
+                            <p class="text-4xl font-bold counter">5</p>
+                            <p class="mt-2">Satisfied clients</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="portfolio" class="portfolio py-20 md:py-40">
         <div class="container mx-auto">
             <div class="text-center mb-8">
@@ -252,7 +254,7 @@
             <div class="w-4/5 mx-auto">
                 <ul class="portfolio-wrapper grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     <!-- Portfolio Item 1 -->
-                     {% for port in portfolio %}
+                    {% for port in portfolio %}
                     <li class="portfolio-item mix category-1 category-3" data-my-order="3">
                         <a href="{{port.imageURL}}" class="block relative group">
                             <div class="portfolio-hover relative overflow-hidden">
@@ -275,51 +277,63 @@
     </section>
     <section id="contact" class="contact py-20 bg-gray-100">
         <div class="container w-full md:w-4/5 mx-auto">
-          <div class="text-center mb-8">
-            <!-- <h1 class="text-4xl font-bold">Get in touch</h1> -->
-          </div>
-          <div class="contact-holder">
-            <div class="mx-auto w-full">
-              <ul class="contact-details lg:flex justify-between  mb-6">
-                <li class="pb-10 md:pb-0">
-                  <i class="fa fa-map-marker text-2xl text-yellow-400" aria-hidden="true"></i>
-                  <p class="text-lg">5 Akindele Lane, Fardock Estate, Iju Ishaga, Lagos, Nigeria</p>
-                </li>
-                <li class="pb-10 md:pb-0">
-                    <i class="fa fa-phone text-2xl text-yellow-400" aria-hidden="true"></i>
-                    <p class="text-lg">+234 9071502233</p>
-                </li>
-               
-                <li class="pb-10 md:pb-0">
-                  <i class="fa fa-envelope text-2xl text-yellow-400" aria-hidden="true"></i>
-                  <p class="text-lg">kayodeola47@gmail.com</p>
-                </li>
-              </ul>
-              <form id="contact-form" class="custom-form" method="post" role="form">
-                {% csrf_token %}
-                <div id="responseMessage" class="bg-green-400 text-white p-6 text-md rounded my-10 hidden"></div>
-                <div class="controls">
-                  <div class="form-group mb-4">
-                    <input id="form_name" type="text" name="name" class="form-control w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="Please enter your name *" required="required" data-error="Name is required.">
-                    <div class="help-block with-errors"></div>
-                  </div>
-                  <div class="form-group mb-4">
-                    <input id="form_email" type="email" name="email" class="form-control w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                    <div class="help-block with-errors"></div>
-                  </div>
-                  <div class="form-group mb-4">
-                    <textarea id="form_message" name="message" class="form-control w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="Message for me *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
-                    <div class="help-block with-errors"></div>
-                  </div>
-                  
-                  <input type="submit" id="sendbutton" class="text-yellow-400 border border-yellow-400 px-10 py-4 font-bold border-2 mt-4 rounded-sm hover:bg-yellow-400 hover:text-white transition.5 transition mt-8 bg-white" value="Send">
-                </div>
-              </form>
+            <div class="text-center mb-8">
+                <!-- <h1 class="text-4xl font-bold">Get in touch</h1> -->
             </div>
-          </div>
+            <div class="contact-holder">
+                <div class="mx-auto w-full">
+                    <ul class="contact-details lg:flex justify-between  mb-6">
+                        <li class="pb-10 md:pb-0">
+                            <i class="fa fa-phone text-2xl text-yellow-400" aria-hidden="true"></i>
+                            <p class="text-lg">+234 9071502233</p>
+                        </li>
+                        <li class="pb-10 md:pb-0">
+                            <i class="fa fa-map-marker text-2xl text-yellow-400" aria-hidden="true"></i>
+                            <p class="text-lg">5 Akindele Lane, Fardock Estate, Iju Ishaga, Lagos, Nigeria</p>
+                        </li>
+
+                        <li class="pb-10 md:pb-0">
+                            <i class="fa fa-envelope text-2xl text-yellow-400" aria-hidden="true"></i>
+                            <p class="text-lg">kayodeola47@gmail.com</p>
+                        </li>
+                    </ul>
+                    <form id="contact-form" class="custom-form" method="post" role="form">
+                        {% csrf_token %}
+                        <div id="responseMessage" class="bg-green-400 text-white p-6 text-md rounded my-10 hidden">
+                        </div>
+                        <div class="controls">
+                            <div class="form-group mb-4">
+                                <input id="form_name" type="text" name="name"
+                                    class="form-control w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+                                    placeholder="Please enter your name *" required="required"
+                                    data-error="Name is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input id="form_email" type="email" name="email"
+                                    class="form-control w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+                                    placeholder="Please enter your email *" required="required"
+                                    data-error="Valid email is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <textarea id="form_message" name="message"
+                                    class="form-control w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+                                    placeholder="Message for me *" rows="4" required="required"
+                                    data-error="Please, leave us a message."></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <input type="submit" id="sendbutton"
+                                class="text-yellow-400 border border-yellow-400 px-10 py-4 font-bold border-2 mt-4 rounded-sm hover:bg-yellow-400 hover:text-white transition.5 transition mt-8 bg-white"
+                                value="Send">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-      </section>
-      <footer class="bg-black text-white py-8">
+    </section>
+    <footer class="bg-black text-white py-8">
         <div class="container mx-auto text-center">
             <div class="flex justify-center space-x-6 mb-4">
                 <a href="https://facebook.com/sammiykay" class="text-xl hover:text-yellow-400">
@@ -340,8 +354,8 @@
             </div>
         </div>
     </footer>
-    
-      
+
+
 </body>
 <script src="{% static 'js/jquery.js' %}"></script>
 <script>
