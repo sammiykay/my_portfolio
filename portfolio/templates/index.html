@@ -17,7 +17,7 @@
 
 <body>
     <nav id="navbar" class="bg-black absolute w-full text-white py-8 text-sm font-semibold" style="z-index: 10000;">
-        <div class="md:flex items-center text-center w-4/6 mx-auto justify-between">
+        <div class="md:flex items-center text-center w-4/5 mx-auto justify-between">
             <div></div>
             <div class="float-right block md:hidden cursor-pointer">
                 <svg id="menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -214,32 +214,31 @@
             </div>
         </div>
     </section>
-    <section class="parallaxie bg-cover bg-center" style="background-image: url('{% static 'image/bg-parallax.jpg' %}');">
-        <div class="overly text-center py-10 md:py-40">
-          <div class="container mx-auto">
-            <div class="row flex flex-wrap justify-center">
-              <div class="static-wrapper grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div class="counter-wrapper text-center">
-                  <div class="top-row justify-center mb-4">
-                    <i class="fa fa-hand-peace-o text-6xl mb-6 text-yellow-400" aria-hidden="true"></i>
-                    <p class="counter text-4xl font-bold text-white ml-2">15</p>
-                  </div>
-                  <p class="text-xl spacing-9 text-white font-semibold">Projects completed</p>
-                </div>
-                <div class="counter-wrapper text-center">
-                  <div class="top-row justify-center mb-4">
-                    <i class="fa fa-diamond text-6xl mb-6 text-yellow-400" aria-hidden="true"></i>
-                    <p class="counter text-4xl font-bold text-white ml-2">5</p>
-                  </div>
-                  <p class="text-xl spacing-9 text-white font-semibold">Satisfied clients</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <section class="relative bg-cover bg-center bg-fixed" style="background-image: url('{% static 'image/bg-parallax.jpg' %}');">
+		<div class="bg-black bg-opacity-50 text-white text-center py-40">
+			<div class="container mx-auto">
+				<div class="block sm:flex w-4/6 m-auto justify-around">
+					<div class="counter-wrapper">
+						<div class="flex flex-col items-center">
+							<i class="fa fa-hand-peace-o text-4xl mb-4"></i>
+							<p class="text-4xl font-bold counter">15</p>
+							<p class="mt-2">Projects completed</p>
+						</div>
+					</div>
+					<div class="counter-wrapper ">
+						<div class="flex flex-col md:mt-0 items-center">
+							<i class="fa fa-diamond text-4xl mt-20 md:mt-0 mb-4"></i>
+							<p class="text-4xl font-bold counter">5</p>
+							<p class="mt-2">Satisfied clients</p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
       
-    <section id="portfolio" class="portfolio py-10 md:py-40">
+    <section id="portfolio" class="portfolio py-20 md:py-40">
         <div class="container mx-auto">
             <div class="text-center mb-8">
                 <h1 class="text-4xl font-bold">My Portfolio</h1>
@@ -253,38 +252,23 @@
             <div class="w-4/5 mx-auto">
                 <ul class="portfolio-wrapper grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     <!-- Portfolio Item 1 -->
+                     {% for port in portfolio %}
                     <li class="portfolio-item mix category-1 category-3" data-my-order="3">
-                        <a href="{% static 'image/bezal.png' %}" class="block relative group">
+                        <a href="{{port.imageURL}}" class="block relative group">
                             <div class="portfolio-hover relative overflow-hidden">
-                                <img src="{% static 'image/bezal.PNG' %}" alt=""
+                                <img src="{{port.imageURL}}" alt=""
                                     class="w-full h-full object-cover group-hover:opacity-75 transition duration-300">
                                 <div
                                     class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300">
                                     <div class="text-center text-white">
-                                        <h4 class="text-xl font-semibold">BezalGlobal</h4>
-                                        <p>Web Application</p>
+                                        <h4 class="text-xl font-semibold">{{port.port_name}}</h4>
+                                        <p>{{port.port_type}}</p>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <!-- Portfolio Item 2 -->
-                    <li class="portfolio-item mix category-1 category-3" data-my-order="4">
-                        <a href="{% static 'image/executivehaven.PNG' %}" class="block relative group">
-                            <div class="portfolio-hover relative overflow-hidden">
-                                <img src="{% static 'image/executivehaven.PNG' %}" alt=""
-                                    class="w-full h-full object-cover group-hover:opacity-75 transition duration-300">
-                                <div
-                                    class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300">
-                                    <div class="text-center text-white">
-                                        <h4 class="text-xl font-semibold">ExecutiveHaven</h4>
-                                        <p>Web Application</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <!-- Add more portfolio items as needed -->
+                    {% endfor %}
                 </ul>
             </div>
         </div>
@@ -295,24 +279,25 @@
             <!-- <h1 class="text-4xl font-bold">Get in touch</h1> -->
           </div>
           <div class="contact-holder">
-            <div class="mx-auto w-full lg:w-10/12">
-              <ul class="contact-details flex justify-between  mb-6">
-                <li class="">
+            <div class="mx-auto w-full">
+              <ul class="contact-details lg:flex justify-between  mb-6">
+                <li class="pb-10 md:pb-0">
                   <i class="fa fa-map-marker text-2xl text-yellow-400" aria-hidden="true"></i>
-                  <p class="text-lg">+234 9071502233</p>
+                  <p class="text-lg">5 Akindele Lane, Fardock Estate, Iju Ishaga, Lagos, Nigeria</p>
                 </li>
-                <li class="">
+                <li class="pb-10 md:pb-0">
                     <i class="fa fa-phone text-2xl text-yellow-400" aria-hidden="true"></i>
-                    <p class="text-lg">5 Akindele Lane, Fardock Estate, Iju Ishaga, Lagos, Nigeria</p>
-                  </li>
+                    <p class="text-lg">+234 9071502233</p>
+                </li>
                
-                <li class="">
+                <li class="pb-10 md:pb-0">
                   <i class="fa fa-envelope text-2xl text-yellow-400" aria-hidden="true"></i>
                   <p class="text-lg">kayodeola47@gmail.com</p>
                 </li>
               </ul>
-              <form id="contact-form" class="custom-form" method="post" action="contact.php" role="form">
-                <div class="messages mb-4"></div>
+              <form id="contact-form" class="custom-form" method="post" role="form">
+                {% csrf_token %}
+                <div id="responseMessage" class="bg-green-400 text-white p-6 text-md rounded my-10 hidden"></div>
                 <div class="controls">
                   <div class="form-group mb-4">
                     <input id="form_name" type="text" name="name" class="form-control w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="Please enter your name *" required="required" data-error="Name is required.">
@@ -326,14 +311,36 @@
                     <textarea id="form_message" name="message" class="form-control w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="Message for me *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
                     <div class="help-block with-errors"></div>
                   </div>
-                
-                  <input type="submit" class="text-yellow-400 border border-yellow-400 px-10 py-4 font-bold border-2 mt-4 rounded-sm hover:bg-yellow-400 hover:text-white transition.5 transition mt-8 bg-white" value="Send">
+                  
+                  <input type="submit" id="sendbutton" class="text-yellow-400 border border-yellow-400 px-10 py-4 font-bold border-2 mt-4 rounded-sm hover:bg-yellow-400 hover:text-white transition.5 transition mt-8 bg-white" value="Send">
                 </div>
               </form>
             </div>
           </div>
         </div>
       </section>
+      <footer class="bg-black text-white py-8">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://facebook.com/sammiykay" class="text-xl hover:text-yellow-400">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="https://x.com/sammiykay" class="text-xl hover:text-yellow-400">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/oke-samson/" class="text-xl hover:text-yellow-400">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="text-xl hover:text-yellow-400">
+                    <i class="fa fa-google" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="text-sm">
+                © 2024 Developed by Sammiykay, All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
       
 </body>
 <script src="{% static 'js/jquery.js' %}"></script>
@@ -372,6 +379,32 @@
         previousScroll = currentScroll;
     });
     console.log(window.screenY)
+    $(document).ready(function () {
+        $('#contact-form').on('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+            $('#sendbutton').prop('disabled', true);
+            $('#sendbutton').addClass('hidden')
+            $.ajax({
+                url: '/', // Replace with your server endpoint
+                type: 'POST',
+                data: $(this).serialize(), // Serialize form data
+                success: function (response) {
+                    console.log(response)
+                    // Handle success response
+                    $('#responseMessage').show();
+                    $('#responseMessage').text('Form submitted successfully!');
+                    $('#sendbutton').prop('disabled', false);
+                    $('#sendbutton').removeClass('hidden')
+                },
+                error: function (xhr) {
+                    // Handle error response
+                    $('#sendbutton').prop('disabled', false);
+                    $('#sendbutton').removeClass('hidden')
+                    $('#responseMessage').text('An error occurred. Please try again.');
+                }
+            });
+        });
+    });
 
 </script>
 
