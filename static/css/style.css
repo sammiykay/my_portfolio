@@ -535,6 +535,17 @@ img + .btn{
 /* ==========================================================================
     4.0 Navbar Styling
    ========================================================================== */
+   .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link.active {
+    color: yellow;
+    font-weight: bold;
+}
 .navbar-custom {
 	opacity: 0;
 	background-color: transparent;
