@@ -28,11 +28,11 @@
             </div>
             <div id="links"
                 class="py-20 md:py-0 flex-col hidden md:flex md:flex-row flex justify-between md:w-2/3 lg:3/5 xl:w-2/5">
-                <a href="#home" class="nav-link hover:text-yellow-400 transition.5 transition">HOME</a>
-                <a href="#service" class="nav-link mt-6 md:mt-0 hover:text-yellow-400 transition.5 transition">SERVICE</a>
-                <a href="#experience" class="nav-link mt-6 md:mt-0 hover:text-yellow-400 transition.5 transition">RESUME</a>
-                <a href="#portfolio" class="nav-link mt-6 md:mt-0 hover:text-yellow-400 transition.5 transition">PORTFOLIO</a>
-                <a href="#contact" class="nav-link mt-6 md:mt-0 hover:text-yellow-400 transition.5 transition">CONTACT</a>
+                <a href="#home" onclick="closeLink()" class="nav-link hover:text-yellow-400 transition.5 transition">HOME</a>
+                <a href="#service" onclick="closeLink()" class="nav-link mt-6 md:mt-0 hover:text-yellow-400 transition.5 transition">SERVICE</a>
+                <a href="#experience" onclick="closeLink()" class="nav-link mt-6 md:mt-0 hover:text-yellow-400 transition.5 transition">RESUME</a>
+                <a href="#portfolio" onclick="closeLink()" class="nav-link mt-6 md:mt-0 hover:text-yellow-400 transition.5 transition">PORTFOLIO</a>
+                <a href="#contact" onclick="closeLink()" class="nav-link mt-6 md:mt-0 hover:text-yellow-400 transition.5 transition">CONTACT</a>
             </div>
         </div>
     </nav>
@@ -420,6 +420,15 @@
         });
     });
 
+
+    function closeLink(){
+        console.log('close')
+        $('#links')
+                .addClass('animated fadeOutUp') // Add exit animation class
+                .one('animationend', function () {
+                    $(this).removeClass('animated fadeOutUp').addClass('hidden');
+                });
+    }
 </script>
 
 </html>
