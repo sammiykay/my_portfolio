@@ -398,6 +398,8 @@
             e.preventDefault(); // Prevent the default form submission
             $('#sendbutton').prop('disabled', true);
             $('#sendbutton').addClass('hidden')
+            $('#sendbutton').addClass('bg-green-400')
+                $('#sendbutton').removeClass('bg-red-400')
             $.ajax({
                 url: '/', // Replace with your server endpoint
                 type: 'POST',
@@ -414,6 +416,8 @@
                     // Handle error response
                     $('#sendbutton').prop('disabled', false);
                     $('#sendbutton').removeClass('hidden')
+                    $('#sendbutton').removeClass('bg-green-400')
+                    $('#sendbutton').addClass('bg-red-400')
                     $('#responseMessage').text('An error occurred. Please try again.');
                 }
             });
