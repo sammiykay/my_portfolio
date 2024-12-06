@@ -27,6 +27,8 @@ def send_thank_you_email(name, email, message):
     email.send(fail_silently=False)
 
 
+
+
     # try:
     #     # Render the email content using a template
     #     email_content = render_to_string('email_template.html', )
