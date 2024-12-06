@@ -221,6 +221,23 @@ img + .btn{
               transform: translate3d(0, 0, 0);
     }
 }
+.cursor {
+	display: inline-block;
+	width: 8px;
+	height: 46px;
+	background-color: white;
+	margin-left: 2px;
+	animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+	0%, 50% {
+		opacity: 1;
+	}
+	51%, 100% {
+		opacity: 0;
+	}
+}
 .typed-cursor {
     font-weight: 300;
 }
